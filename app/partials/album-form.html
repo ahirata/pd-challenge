@@ -1,0 +1,67 @@
+<h2>{{ title }}</h2>
+
+<form class="form-horizontal" id="add-album-form" name="albumForm" ng-submit="save()">
+    <div class="form-group">
+        <label for="album-name" class="col-sm-1 control-label">Album:</label>
+        <div class="col-sm-11">
+            <input required type="text" ng-model="album.name" class="form-control" id="album-name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="album-artist" class="col-sm-1 control-label">Artist:</label>
+        <div class="col-sm-11">
+            <input required type="text" ng-model="album.artist" class="form-control" id="album-artist">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="album-genre" class="col-sm-1 control-label">Genre:</label>
+        <div class="col-sm-11">
+            <input required type="text" ng-model="album.genre" class="form-control" id="album-genre">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="album-year" class="col-sm-1 control-label">Year:</label>
+        <div class="col-sm-11">
+            <input type="text" ng-model="album.year" class="form-control" id="album-year">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="album-tags" class="col-sm-1 control-label">Tags:</label>
+        <div class="col-sm-11">
+            <input type="text" ng-model="tagholder" class="form-control" id="album-tags">
+        </div>
+    </div>
+	<div class="row form-group">
+		<label for="album-tags" class="col-sm-1 control-label">Track:</label>
+		<div class="col-sm-11">
+			<div class="input-group">
+				<input type="text" class="form-control" ng-model="newTrack" />
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button" ng-click="add()" id="add">
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					</button>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="row form-group" ng-repeat="track in album.tracks">
+		<label for="album-tags" class="col-sm-1 control-label sr-only">Track:</label>
+		<div class="col-sm-11">
+			<div class="input-group">
+				<input type="text" class="form-control" ng-model="track" />
+				<span class="input-group-btn">
+					<button class="btn btn-default remove" type="button" ng-click="remove(index)">
+						<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+					</button>
+				</span>
+			</div>
+		</div>
+	</div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </div>
+</form>

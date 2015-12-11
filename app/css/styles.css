@@ -1,0 +1,26 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.row .join-col {
+  padding-right: 0;
+  margin-right: -1px;
+}
+.cancel-radius-right  {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.cancel-radius-left {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.album-list{
+  margin-top: 10px;
+}
+input.form-control.ng-invalid.ng-touched {
+  background-color: #FA787E;
+}

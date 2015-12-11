@@ -1,0 +1,21 @@
+<div ng-controller="AlbumListController">
+
+    <div class="sub-header">
+        <h2>Albums </h2>
+        <a href="#/albums/new-album" id="new-album" class="btn btn-default" role="button">Add</a>
+    </div>
+
+    <div class="album-list">
+        <li ng-show="!albums.length && is_search">No albums matching the criteria</li>
+        <li ng-show="!albums.length && !is_search">No albums added yet</li>
+
+        <div ng-repeat="album in albums" class="input-group">
+            <a href="#/albums/{{album._id}}" class="form-control cancel-radius-left album-item">{{ album.name }} by {{ album.artist }}</a>
+            <span class="input-group-btn">
+                <button class="btn btn-default cancel-radius-right remove-album-item" ng-click="remove(album, index)">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
