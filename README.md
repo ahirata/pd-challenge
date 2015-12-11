@@ -16,7 +16,10 @@ Then run
 node index.js
 ```
 
-Verions:
+Versions:
+
 MongoDB: 3.0.7
+
 Elasticsearch: 2.1.0
+
 Node: 5.1.1
